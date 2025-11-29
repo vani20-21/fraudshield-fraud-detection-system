@@ -94,7 +94,21 @@ The core system is functional with UI and AI interaction in progress. Enhancemen
 
 ---
 
-## 8. Author
+## 8. Screenshots
+
+8.1 Secure Access Portal (Employee Login)
+A secure authentication screen designed for internal banking personnel to safely access the fraud analysis system.
+
+![Secure Access Portal](Secure%20Access%20Portal.png)
+
+8.2 Real-Time Fraud Risk Assessment Dashboard
+Dashboard for analysts to scan transactions and review AI-driven fraud probability, behavioral triggers, and system recommended actions.
+
+![Fraud Risk Evaluation Dashboard](Fraud%20Risk%20Evaluation%20Dashboard.png)
+
+---
+
+## 9. Author
 
 **Kokilavani M**
 Full Stack Developer – Fraud Intelligence Systems
@@ -108,12 +122,12 @@ Responsibilities:
 
 ---
 
-## 9. Keywords
+## 10. Keywords
 
 Artificial Intelligence, Fraud Detection, Risk Analytics, FinTech Security, Digital Payments, Full-Stack Development, Indian Banking Systems
 
 ---
 
-## Next Steps
+## 11. Next Steps
 
 Once the UI and components are generated and finalized, project screenshots, workflow diagrams, performance metrics and deployment instructions will be updated.
