@@ -1,3 +1,15 @@
+## Table of Contents
+1. Key Features
+2. Technology Stack
+3. Fraud Risk Intelligence Model
+4. System Architecture
+5. Installation & Execution
+6. Current Status
+7. Future Enhancements
+8. Screenshots
+9. Author
+10. Keywords
+11. Next Steps
 
 # FraudShield 3D — AI-Powered Fraud Transaction Detection System
 
@@ -53,13 +65,75 @@ Output includes:
 Simplified architecture (detailed diagram to be added):
 
 ```
-User Interface
-        ↓
-Transaction Input Module
-        ↓
-Risk Assessment Service → Gemini AI → Risk Score + Explanation
-        ↓
-Fraud Alert Dashboard
+                        +-----------------------------+
+                        |     User / Analyst          |
+                        |  (Browser – React 3D UI)    |
+                        +--------------+--------------+
+                                       |
+                                       v
+                        +-----------------------------+
+                        |      Web Frontend           |
+                        |  - Login & session handling |
+                        |  - Transaction input forms  |
+                        |  - Dashboard visualisation  |
+                        +--------------+--------------+
+                                       |
+                                       v
+                        +-----------------------------+
+                        |      API Gateway / BFF      |
+                        |  - Validates requests       |
+                        |  - Maps UI calls to services|
+                        +--------------+--------------+
+                                       |
+                                       v
+                 +---------------------+---------------------+
+                 |            Application Services           |
+                 |-------------------------------------------|
+                 |  Transaction Service                      |
+                 |    - Normalises input                     |
+                 |    - Persists transaction snapshot        |
+                 |                                           |
+                 |  Risk Orchestration Service               |
+                 |    - Calls Fraud Rules Engine             |
+                 |    - Calls AI Risk Scoring Engine         |
+                 |    - Aggregates score and explanation     |
+                 +---------------------+---------------------+
+                                       |
+                +----------------------+----------------------+
+                |                                             |
+                v                                             v
++-------------------------------+          +------------------------------+
+|   Fraud Rules Engine          |          |   AI Risk Scoring Engine     |
+| - Threshold checks            |          | - Sends features to LLM/AI   |
+| - Velocity / frequency rules  |          | - Receives risk score        |
+| - Merchant / channel rules    |          | - Receives textual rationale |
++-------------------------------+          +------------------------------+
+                |                                             |
+                +----------------------+----------------------+
+                                       v
+                        +-----------------------------+
+                        |   Decision & Alert Manager  |
+                        | - Combines rule + AI output |
+                        | - Assigns Low/Med/High risk |
+                        | - Creates alert records     |
+                        +--------------+--------------+
+                                       |
+                                       v
+                        +-----------------------------+
+                        |        Data Layer           |
+                        |  - Transactions store       |
+                        |  - Alerts / cases           |
+                        |  - User & role metadata     |
+                        |  - Audit & logs             |
+                        +--------------+--------------+
+                                       |
+                                       v
+                        +-----------------------------+
+                        | Monitoring & Audit Logging  |
+                        | - Request/response logs     |
+                        | - Model performance metrics |
+                        +-----------------------------+
+
 ```
 
 ---
